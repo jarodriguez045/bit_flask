@@ -1,2 +1,2 @@
-From jenkins:latest
+From jenkins/jenkins:lts
 # latest Jenkins image
