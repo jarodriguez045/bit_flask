@@ -1,17 +1,13 @@
-FROM python:alpine
+FROM python:latest
 
 LABEL key="Jose_Rodriguez"
 
-#RUN python
-
-# We copy just the requirements.txt first to leverage Docker cache
-COPY ./requirements.txt /app/requirements.txt
-
 WORKDIR /app
 
-RUN pip install -r requirements.txt
+# We copy just the requirements.txt first to leverage Docker cache
+COPY ./ /app
 
-COPY . /app
+RUN pip install -r requirements.txt
 
 ENTRYPOINT [ "python" ]
 
